@@ -5,19 +5,23 @@
 }
 
 .game-board {
-    width: 100%;
+    width: 70%;
     height: 500px;
     border: 15px solid #03a20e;
-    margin: 0 auto;
+    margin: 7% auto;
     position: relative;
     overflow: hidden;
     background: linear-gradient(#87ceeb, #e0f0ff);
+    
 }
 
 .pipe {
     position: absolute;
     bottom: 0;
     width: 80px;
+}
+
+.pipe-active {
     animation: pipe-animation 1.5s infinite linear;
 }
 
@@ -31,11 +35,16 @@
     animation: jump 500ms ease-out;
 }
 
-.nuvens {
+.clouds {
     position: absolute;
     width: 300px;
     padding-top: 20px;
-    animation: nuvens-animation 15s infinite linear;
+    
+}
+
+.clouds-active {
+    animation: clouds-animation 15s infinite linear;
+
 }
 
 @keyframes pipe-animation {
@@ -67,7 +76,7 @@
     }
 }
 
-@keyframes nuvens-animation {
+@keyframes clouds-animation {
     from {
         right: -300px;
     }
@@ -75,3 +84,23 @@
         right: 100%;
     }
 }
+
+
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10; /* Coloca o vídeo por cima */
+}
+video {
+    max-width: 80%;
+    border: 5px solid #03a20e;
+    border-radius: 10px;
+}
+
